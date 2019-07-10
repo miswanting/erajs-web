@@ -1,0 +1,31 @@
+{
+  "name": "erajs-web",
+  "version": "0.1.0-190710",
+  "description": "",
+  "main": "dist/index.html",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miswanting/erajs-web.git"
+  },
+  "author": "Miswanting",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/miswanting/erajs-web/issues"
+  },
+  "homepage": "https://github.com/miswanting/erajs-web#readme",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
+}
