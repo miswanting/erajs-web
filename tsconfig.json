@@ -7,7 +7,9 @@
         "noImplicitReturns": true,
         "module": "ES6",
         "moduleResolution": "Node",
-        "target": "ES5"
+        "target": "ES5",
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true
     },
     "include": [
         "./src/**/*"

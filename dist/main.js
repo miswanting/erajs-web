@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -284,15 +284,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
-/***/ "./src/main.ts":
-/*!*********************!*\
-  !*** ./src/main.ts ***!
-  \*********************/
+/***/ "./src/main.tsx":
+/*!**********************!*\
+  !*** ./src/main.tsx ***!
+  \**********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/_vue@2.6.10@vue/dist/vue.esm.js\");\n/* harmony import */ var _components_Hello_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Hello.vue */ \"./src/components/Hello.vue\");\n\r\n\r\nvar v = new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\r\n    el: \"#app\",\r\n    template: \"\\n    <div>\\n        Name: <input v-model=\\\"name\\\" type=\\\"text\\\">\\n        <hello-component :name=\\\"name\\\" :initialEnthusiasm=\\\"5\\\" />\\n    </div>\\n    \",\r\n    data: { name: \"World\" },\r\n    components: {\r\n        HelloComponent: _components_Hello_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack:///./src/main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/_vue@2.6.10@vue/dist/vue.esm.js\");\n/* harmony import */ var _components_Hello_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Hello.vue */ \"./src/components/Hello.vue\");\n\r\n\r\nvar FRAMEWORK = \"Vue\";\r\nif (FRAMEWORK == \"Vue\") {\r\n    var v = new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\r\n        el: \"#app\",\r\n        template: \"\\n    <div>\\n        Name: <input v-model=\\\"name\\\" type=\\\"text\\\">\\n        <hello-component :name=\\\"name\\\" :initialEnthusiasm=\\\"5\\\" />\\n    </div>\\n    \",\r\n        data: { name: \"World\" },\r\n        components: {\r\n            HelloComponent: _components_Hello_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\r\n        }\r\n    });\r\n}\r\nelse if (FRAMEWORK == \"React\") {\r\n}\r\n\n\n//# sourceURL=webpack:///./src/main.tsx?");
 
 /***/ })
 

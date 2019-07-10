@@ -2,7 +2,7 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    entry: './src/main.ts',
+    entry: './src/main.tsx',
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
