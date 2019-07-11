@@ -38,6 +38,12 @@ module.exports = {
                     'vue-style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.ttf$/,
+                use: [
+                    { loader: 'file-loader' }
+                ]
             }
         ]
     },
