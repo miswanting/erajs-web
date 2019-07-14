@@ -1,63 +1,54 @@
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
-    entry: './src/main.tsx',
-    mode: 'development',
+    entry: "./src/index.tsx",
+    mode: "development",
+    watch: true,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'index.js'
     },
+
+    // Enable sourcemaps for debugging webpack's output.
+    devtool: "source-map",
+
+    resolve: {
+        // Add '.ts' and '.tsx' as resolvable extensions.
+        extensions: [".ts", ".tsx", ".js", ".json"]
+    },
+
     module: {
         rules: [
+            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader',
-                exclude: /node_modules/,
-                options: {
-                    appendTsSuffixTo: [/\.vue$/],
-                }
+                loader: "awesome-typescript-loader"
+            },
+
+            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                loader: "source-map-loader"
             },
             {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-                        // the "scss" and "sass" values for the lang attribute to the right configs here.
-                        // other preprocessors should work out of the box, no loader config like this necessary.
-                        'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-                    }
-                    // other vue-loader options go here
-                }
-            },
-            {
-                test: /\.css$/,
+                test: /\.sass$/,
                 use: [
-                    'vue-style-loader',
-                    'css-loader'
+                    "style-loader", // 将 JS 字符串生成为 style 节点
+                    "css-loader", // 将 CSS 转化成 CommonJS 模块
+                    "sass-loader" // 将 Sass 编译成 CSS，默认使用 Node Sass
                 ]
             },
             {
-                test: /\.ttf$/,
-                use: [
-                    { loader: 'file-loader' }
-                ]
-            }
+                test: /\.(ttf|otf|eot|svg|woff(2)?)$/,
+                use: 'url-loader'
+            },
         ]
     },
-    resolve: {
-        extensions: ['.ts', '.js', '.vue', '.json'],
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js'
-        }
-    },
+
     plugins: [
-        // 请确保引入这个插件！
-        new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
-        })
-    ]
-}
+        new CopyPlugin([
+            'src/index.html'
+        ]),
+    ],
+};
